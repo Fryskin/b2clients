@@ -58,10 +58,18 @@ class _RegisterPageState extends State<RegisterPage> {
       'create_time': currentUser.metadata.creationTime,
       'updateTime': currentUser.metadata.creationTime,
       'phone_number': '',
-      'employment_type': {'company_member': false, 'private_specialist': false},
-      'service_types': {'floor_repair': false, 'tiling_work': false},
+      'employment_type': {
+        'company_member': false,
+        'private_specialist': false,
+      },
+      'service_types': {
+        'floor_repair': false,
+        'tiling_work': false,
+      },
       'location': {
-        'city': {'prague': false},
+        'city': {
+          'prague': false,
+        },
         'region': {
           'prague_1': false,
           'prague_2': false,
@@ -85,8 +93,8 @@ class _RegisterPageState extends State<RegisterPage> {
           'prague_20': false,
           'prague_21': false,
           'prague_22': false,
-        }
-      }
+        },
+      },
     });
   }
 
