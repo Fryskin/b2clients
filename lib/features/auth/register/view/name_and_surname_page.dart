@@ -31,20 +31,18 @@ class _NameAndSurnamePageState extends State<NameAndSurnamePage> {
   }
 
   // get user account document ID
-  Future getDocumentId() async {
+  Future addAcountInfo() async {
     String userUID = FirebaseAuth.instance.currentUser!.uid;
+
+    // get document id
     await FirebaseFirestore.instance
         .collection('accounts')
         .where('uid', isEqualTo: userUID)
         .get()
         .then((snapshot) => snapshot.docs.forEach((document) {
-              // {
-              //   Map<String, dynamic> data = document.data();
-
-              //   documentID = document.id;
-              // }
               _documentID = document.id;
             }));
+    // add new info to fields in account
     await FirebaseFirestore.instance
         .collection('accounts')
         .doc(_documentID)
@@ -172,7 +170,7 @@ class _NameAndSurnamePageState extends State<NameAndSurnamePage> {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: ElevatedButton(
                 onPressed: () {
-                  getDocumentId();
+                  addAcountInfo();
                   Navigator.push(
                     context,
                     MaterialPageRoute(
