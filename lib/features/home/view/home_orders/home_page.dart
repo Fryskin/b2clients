@@ -82,16 +82,16 @@ class _HomePage extends State<HomePage> {
       future: getAccountData(),
       builder: (context, snapshot) {
         if (userName == '') {
-          return NameAndSurnamePage();
+          return const NameAndSurnamePage();
         }
         if (!isEmploymentTypeContainsTrue) {
-          return EmploymentTypePage();
+          return const EmploymentTypePage();
         }
         if (!isServiceTypesContainsTrue) {
-          return ServiceTypePage();
+          return const ServiceTypePage();
         }
         if (!isCityOrRegionContainsTrue) {
-          return CityAndRegionPage();
+          return const CityAndRegionPage();
         } else {
           return Scaffold(
             body: Center(
@@ -105,12 +105,12 @@ class _HomePage extends State<HomePage> {
                             itemCount: documentIDs.length,
                             itemBuilder: (context, index) {
                               return Card(
-                                color: Color.fromARGB(255, 255, 255, 255),
+                                color: const Color.fromARGB(255, 255, 255, 255),
                                 clipBehavior: Clip.antiAlias,
                                 child: Column(
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.all(16.0),
+                                      padding: const EdgeInsets.all(16.0),
                                       child: GetOrderDataWidget(
                                         documentID: documentIDs[index],
                                       ),
