@@ -47,14 +47,46 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   Future addEmailAndUID() async {
+    // add email and uid to account
     User currentUser = FirebaseAuth.instance.currentUser!;
 
     await FirebaseFirestore.instance.collection('accounts').add({
       'uid': currentUser.uid,
+      'name': '',
+      'surname': '',
       'email': currentUser.email,
       'create_time': currentUser.metadata.creationTime,
       'updateTime': currentUser.metadata.creationTime,
       'phone_number': '',
+      'employment_type': {'company_member': false, 'private_specialist': false},
+      'service_types': {'floor_repair': false, 'tiling_work': false},
+      'location': {
+        'city': {'prague': false},
+        'region': {
+          'prague_1': false,
+          'prague_2': false,
+          'prague_3': false,
+          'prague_4': false,
+          'prague_5': false,
+          'prague_6': false,
+          'prague_7': false,
+          'prague_8': false,
+          'prague_9': false,
+          'prague_10': false,
+          'prague_11': false,
+          'prague_12': false,
+          'prague_13': false,
+          'prague_14': false,
+          'prague_15': false,
+          'prague_16': false,
+          'prague_17': false,
+          'prague_18': false,
+          'prague_19': false,
+          'prague_20': false,
+          'prague_21': false,
+          'prague_22': false,
+        }
+      }
     });
   }
 
