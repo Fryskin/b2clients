@@ -9,7 +9,7 @@ class BusinessToClientsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Business To Clients',
-      theme: theme,
+      // theme: theme,
       routes: routes,
       // initialRoute: '',
       // home: const MainPage(),
