@@ -12,7 +12,7 @@ void main() async {
   );
   await Firebase.initializeApp(
     name: 'BissToCliForCli',
-    options: FirebaseOptions(
+    options: const FirebaseOptions(
       apiKey: 'AIzaSyAeGvtILVDfnvteESAlbEMK4kVlpwJbdAU',
       appId: '1:381969372251:web:3c1230c1679cb558a2db7e',
       messagingSenderId: '381969372251',
@@ -22,6 +22,8 @@ void main() async {
       measurementId: 'G-ZVFNGWLQK5',
     ),
   );
+  // FirebaseAppChec firebaseAppCheck = FirebaseAppCheck.getInstance();
+  //  firebaseAppCheck.installAppCheckProviderFactory( SafetyNetAppCheckProviderFactory.getInstance());
 
-  runApp(const BusinessToClientsApp());
+  runApp(const BusinessToClientsApp(languageCode: 'cs'));
 }
